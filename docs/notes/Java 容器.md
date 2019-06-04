@@ -1,4 +1,3 @@
-* [点击阅读面试进阶指南 ](https://github.com/CyC2018/Backend-Interview-Guide)
 <!-- GFM-TOC -->
 * [一、概览](#一概览)
     * [Collection](#collection)
@@ -25,8 +24,7 @@
 
 ## Collection
 
-<div align="center"> <img src="pics/6_2001550476096035.png"/> </div><br>
-
+<div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/73403d84-d921-49f1-93a9-d8fe050f3497.png" width="800px"> </div><br>
 
 ### 1. Set
 
@@ -52,7 +50,7 @@
 
 ## Map
 
-<div align="center"> <img src="pics/2_2001550426232419.png"/> </div><br>
+<div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/774d756b-902a-41a3-a3fd-81ca3ef688dc.png" width="500px"> </div><br>
 
 - TreeMap：基于红黑树实现。
 
@@ -67,7 +65,7 @@
 
 ## 迭代器模式
 
-<div align="center"> <img src="pics/91aa7c29-438f-4fcc-8c63-2a75899139de.png"/> </div><br>
+<div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/93fb1d38-83f9-464a-a733-67b2e6bfddda.png" width="600px"> </div><br>
 
 Collection 继承了 Iterable 接口，其中的 iterator() 方法能够产生一个 Iterator 对象，通过这个对象就可以迭代遍历 Collection 中的元素。
 
@@ -115,7 +113,7 @@ List list = Arrays.asList(1, 2, 3);
 
 ### 1. 概览
 
-实现了 RandomAccess 接口，因此支持随机访问。这是理所当然的，因为 ArrayList 是基于数组实现的。
+因为 ArrayList 是基于数组实现的，所以支持快速随机访问。RandomAccess 接口标识着该类支持快速随机访问。
 
 ```java
 public class ArrayList<E> extends AbstractList<E>
@@ -128,8 +126,7 @@ public class ArrayList<E> extends AbstractList<E>
 private static final int DEFAULT_CAPACITY = 10;
 ```
 
-<div align="center"> <img src="pics/7935be3d-c2b3-4213-90c9-1e68ec4ac4e7.png"/> </div><br>
-
+<div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/52a7744f-5bce-4ff3-a6f0-8449334d9f3d.png" width="400px"> </div><br>
 
 ### 2. 扩容
 
@@ -392,7 +389,7 @@ transient Node<E> first;
 transient Node<E> last;
 ```
 
-<div align="center"> <img src="pics/09184175-9bf2-40ff-8a68-3b467c77216a.png"/> </div><br>
+<div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/c8563120-cb00-4dd6-9213-9d9b337a7f7c.png" width="500px"> </div><br>
 
 ### 2. 与 ArrayList 的比较
 
@@ -412,9 +409,9 @@ transient Node<E> last;
 transient Entry[] table;
 ```
 
-Entry 存储着键值对。它包含了四个字段，从 next 字段我们可以看出 Entry 是一个链表。即数组中的每个位置被当成一个桶，一个桶存放一个链表。HashMap 使用拉链法来解决冲突，同一个链表中存放哈希值相同的 Entry。
+Entry 存储着键值对。它包含了四个字段，从 next 字段我们可以看出 Entry 是一个链表。即数组中的每个位置被当成一个桶，一个桶存放一个链表。HashMap 使用拉链法来解决冲突，同一个链表中存放哈希值和散列桶取模运算结果相同的 Entry。
 
-<div align="center"> <img src="pics/1d2719d5-8d60-4c9b-a4ad-b2df7c7615af.jpg"/> </div><br>
+<div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/9420a703-1f9d-42ce-808e-bcb82b56483d.png" width="550px"> </div><br>
 
 ```java
 static class Entry<K,V> implements Map.Entry<K,V> {
@@ -490,7 +487,7 @@ map.put("K3", "V3");
 - 计算键值对所在的桶；
 - 在链表上顺序查找，时间复杂度显然和链表的长度成正比。
 
-<div align="center"> <img src="pics/cf779e26-0382-4495-8463-f1e19e2e38a0.jpg"/> </div><br>
+<div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/e0870f80-b79e-4542-ae39-7420d4b0d8fe.png" width="550px"> </div><br>
 
 ### 3. put 操作
 
@@ -826,7 +823,7 @@ final Segment<K,V>[] segments;
 static final int DEFAULT_CONCURRENCY_LEVEL = 16;
 ```
 
-<div align="center"> <img src="pics/deb18bdb-b3b3-4660-b778-b0823a48db12.jpg"/> </div><br>
+<div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/db808eff-31d7-4229-a4ad-b8ae71870a3a.png" width="550px"> </div><br>
 
 ### 2. size 操作
 
@@ -1112,3 +1109,9 @@ public final class ConcurrentCache<K, V> {
 - [Java 集合细节（二）：asList 的缺陷](http://wiki.jikexueyuan.com/project/java-enhancement/java-thirtysix.html)
 - [Java Collection Framework – The LinkedList Class](http://javaconceptoftheday.com/java-collection-framework-linkedlist-class/)
 
+
+
+
+
+</br><div align="center">💡 </br></br> 更多精彩内容将发布在公众号 **CyC2018**，公众号提供了该项目的离线阅读版本，后台回复"下载" 即可领取。也提供了一份技术面试复习思维导图，不仅系统整理了面试知识点，而且标注了各个知识点的重要程度，从而帮你理清多而杂的面试知识点，后台回复"资料" 即可领取。我基本是按照这个思维导图来进行复习的，对我拿到了 BAT 头条等 Offer 起到很大的帮助。你们完全可以和我一样根据思维导图上列的知识点来进行复习，就不用看很多不重要的内容，也可以知道哪些内容很重要从而多安排一些复习时间。</div></br>
+<div align="center"><img width="180px" src="https://cyc-1256109796.cos.ap-guangzhou.myqcloud.com/%E5%85%AC%E4%BC%97%E5%8F%B7.jpg"></img></div>
